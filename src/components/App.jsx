@@ -34,7 +34,7 @@ export const App = () => {
       />
       <Suspense fallback={<div>Loading Contacts...</div>}>
         <Routes>
-          <Route path="/" element={<LoginPage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/contacts" element={<ContactsPage />} />
         </Routes>

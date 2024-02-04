@@ -21,6 +21,7 @@ const RegisterPage = () => {
     <div>
       <h2>RegisterPage</h2>
       <form onSubmit={onSubmit}>
+        <input type="text" name="userName" placeholder="name" />
         <input type="email" name="userEmail" placeholder="email" />
         <input
           type="password"
