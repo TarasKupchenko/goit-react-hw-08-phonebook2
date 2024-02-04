@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
@@ -31,6 +32,13 @@ export const App = () => {
         contacts={filteredContacts}
         onDeleteContact={deleteContactHandler}
       />
+      <Suspense fallback={<div>Loading Contacts...</div>}>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/contacts" element={<ContactsPage />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 };
