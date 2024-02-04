@@ -1,0 +1,22 @@
+header {
+  box-shadow: 0 5px 5px rgb(201, 196, 196);
+  padding: 20px;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+.navLink {
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.active {
+  color: blue;
+}

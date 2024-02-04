@@ -8,9 +8,13 @@ export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
   const filter = useSelector(state => state.filter);
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredContacts = contacts.filter(contact => {
+    // Add null check to prevent accessing properties of undefined
+    if (contact && contact.name) {
+      return contact.name.toLowerCase().includes(filter.toLowerCase());
+    }
+    return false;
+  });
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
